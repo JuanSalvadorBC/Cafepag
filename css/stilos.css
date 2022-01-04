@@ -1,0 +1,279 @@
+
+/*link de referencia del estilo a utilizar*/
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Inconsolata:wght@200;300;400&display=swap');
+
+
+:root{
+	--main-color:#FAFAFA;
+	--black:#212121;
+	--bg:#000000 ;
+	--border: .1rem solid rgba(255,255,255,3);
+	--selecion: #E6EE9C;
+}
+
+*{
+	    font-family: 'Comforter', cursive;
+	    font-family: 'Inconsolata', monospace;
+	    margin:0; padding: 0;
+	    box-sizing: border-box;
+	    outline: none; border: none;
+	    text-decoration: none;
+	    text-transform: capitalize;
+	    transition: .2s linear;
+}
+/*diseño del html*/
+html{
+	font-size: 50%;
+	overflow-x: hidden;
+	scroll-padding-top: 9rem;
+	scroll-behavior: smooth;
+}
+/*configuarcion del barras laterales */
+html::-webkit-scrollbar{
+	
+	width: .9rem;
+}
+html::-webkit-scrollbar-track{
+	background: transparent;
+	width: .8rem;
+}
+html::-webkit-scrollbar-thumb{
+	background: #7B1FA2;
+	border-radius: 5rem;
+}
+/*diseño del la eqtiqueta body*/
+body{
+ background: var(--bg);
+}
+/*diseño del boton de verificar*/
+
+.btn{
+	margin-top: 1rem;
+	display: inline-block;
+	padding: .7rem 3rem;
+	font-size: 1.7rem;
+	color:#EFEBE9 ;
+	background: #424242;
+	cursor: pointer;
+}
+
+.btn:hover{
+	letter-spacing: .2rem;
+}
+
+/*diseño del la clase header principal*/
+.header{
+	background: var(--bg);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.5rem 7%;
+	border-bottom: var(--border);
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	z-index: 1000;
+
+
+}
+/*diseño de la imagen del logo, tamaño, estructura*/
+img{
+ max-width: 100%;
+ max-height: 100%;
+
+}
+
+.header .logo img{
+	heigt: 80px;
+	width: 80px;
+
+
+/*diseño del menubar, posicionamiento,color*/
+}
+/*letra*/
+.header .menubar a{
+	margin: 0 1rem;
+	font-size: 1.6rem;
+	color:  #FFFFFF;
+
+}
+/*seleccion*/
+.header .menubar a:hover{
+	color: var(--main-color);
+	border-bottom: .1rem solid var(--selecion);
+	padding-bottom: 1rem;
+}
+/*alineamieno de elementos conforme ala estructura de la cabez y clase iconos*/
+.header .icons div{
+	color:#FFFFFF;
+	cursor: pointer;
+	font-size: 2.5rem;
+	margin-left: 2rem;
+
+}
+.header .icons div:hover{
+	color: var(--main-color);
+}
+
+#menu-btn{
+	display: none;
+}
+
+
+/*diseño del panel de busqueda*/
+.header .search-form{
+	position: absolute;
+	top: 115%; right: 7% ;
+	background:white;
+	width: 25rem;
+	height: 5rem;
+	display: flex;
+	align-items: center;
+	transform:scaleY(0) ;
+	transform-origin: top;
+
+}
+/*campo de texto de entrada del buscador*/
+.header .search-form input{
+	height: 100%;
+	width: 100%;
+	font-size: 1.4rem;
+	color: var(--black);
+	padding: 1rem;
+	text-transform: none;
+}
+
+.header .search-form label{
+
+	cursor: pointer;
+	font-size: 2.2rem;
+	margin-right: 1.5rem;
+	color: var(--black);
+}
+.header .search-form label:hover{
+	color:var(--main-color);
+}
+/*opcion de selecion de productos*/
+.header .cart-items-container{
+	position: absolute;
+	top: 100%; right:-100%;
+	height: calc(100vh - 9.5rem );
+	width: 35rem;
+	background: #EFEBE9;
+	padding:0 1.5rem ;
+
+}
+/*diseño de las opciones de producstos*/
+.header .cart-items-container .cart-item{
+	position: relative;
+	margin: 2rem 0;
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+
+
+}
+.header .cart-items-container .cart-item .fa-times{
+	position: absolute;
+	top: 1rem; right: 1rem;
+	font-size: 2rem;
+	cursor: pointer;
+	color: var(--black);
+}
+/*color de boton de cierre*/
+.header .cart-items-container .cart-item .fa-times:hover{
+	color: var(--main-color);
+}
+.header .cart-items-container .cart-item img{
+	height: 7rem;
+}
+.header .cart-items-container .cart-item .content h3{
+	font-size: 3rem;
+	color: var(--black);
+	padding-bottom: .5rem ;
+}
+/*precio*/
+.header .cart-items-container .cart-item .content .price{
+	font-size: 1.4rem;
+	color: #212121;
+	
+}
+/*diseño del tamaño del boton*/
+.header .cart-items-container .btn{
+	width: 90%;
+	text-align: center;
+}
+
+
+
+
+
+
+/*media querries para el ajuste de pantalla dependeiendo del navegador*/
+
+/*
+@media(max-width:991px){
+	
+
+	html{font-size: 55%;}
+
+	.header{padding: 1.5rem 2rem;}
+
+ 
+ @media(max-width: 991px){
+	#menu-btn{
+	display: inline-block;
+    }
+	.header .menubar{
+		position: absolute;
+		top:100%; right:-100%;
+		background: white;
+		width: 30rem;
+		height: calc(100vh - 9.5rem);
+	}
+     .header .menubar .active{right: 0;}
+
+	.header .menubar a{
+		color: var(--black);
+		display: block;
+		margin: 1.5rem;
+		padding: .5rem;
+		font-size: 2rem;
+	}
+  }
+}
+*/
+
+@media(max-width:991px){
+	html{ 
+		font-size: 55%; 
+	}
+	.header{
+		padding: 1.5rem 2rem;
+	}
+}
+ @media(max-width: 991px){
+	#menu-btn{
+	display: inline-block;
+    }
+	.header .menubar{
+		position: absolute;
+		top:100%; right:-100%;
+		background: white;
+		width: 30rem;
+		height: calc(100vh - 9.5rem);
+	}
+     .header .menubar .active{
+     	right: 0;
+     }
+
+	.header .menubar a{
+		color: var(--black);
+		display: block;
+		margin: 1.5rem;
+		padding: .5rem;
+		font-size: 2rem;
+	}
+}
+
+
+/*-----------------------*/
